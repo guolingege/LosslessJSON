@@ -33,8 +33,6 @@
 #import <Foundation/Foundation.h>
 #import "SBJson5StreamParser.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 /**
  Block called when the parser has parsed an item. This could be once
  for each root document parsed, or once for each unwrapped root array element.
@@ -119,11 +117,11 @@ typedef void (^SBJson5ErrorBlock)(NSError* error);
  @param eh Called if the parser encounters an error.
 
  */
-+ (instancetype)parserWithBlock:(SBJson5ValueBlock)block
++ (id)parserWithBlock:(SBJson5ValueBlock)block
        allowMultiRoot:(BOOL)allowMultiRoot
       unwrapRootArray:(BOOL)unwrapRootArray
              maxDepth:(NSUInteger)maxDepth
-         errorHandler:(SBJson5ErrorBlock _Nullable)eh;
+         errorHandler:(SBJson5ErrorBlock)eh;
 
 /**
  Create a JSON Parser to parse a single document
@@ -134,8 +132,8 @@ typedef void (^SBJson5ErrorBlock)(NSError* error);
  @param eh Called if the parser encounters an error.
 
  */
-+ (instancetype)parserWithBlock:(SBJson5ValueBlock)block
-         errorHandler:(SBJson5ErrorBlock _Nullable)eh;
++ (id)parserWithBlock:(SBJson5ValueBlock)block
+         errorHandler:(SBJson5ErrorBlock)eh;
 
 
 /**
@@ -177,8 +175,8 @@ typedef void (^SBJson5ErrorBlock)(NSError* error);
  @see +unwrapRootArrayParserWithBlock:errorHandler:
  @see +parserWithBlock:allowMultiRoot:unwrapRootArray:maxDepth:errorHandler:
  */
-+ (instancetype)multiRootParserWithBlock:(SBJson5ValueBlock)block
-                  errorHandler:(SBJson5ErrorBlock _Nullable)eh;
++ (id)multiRootParserWithBlock:(SBJson5ValueBlock)block
+                  errorHandler:(SBJson5ErrorBlock)eh;
 
 /**
  Create a parser that "unwraps" a top-level array.
@@ -218,8 +216,8 @@ typedef void (^SBJson5ErrorBlock)(NSError* error);
  @see +multiRootParserWithBlock:errorHandler:
  @see +parserWithBlock:allowMultiRoot:unwrapRootArray:maxDepth:errorHandler:
  */
-+ (instancetype)unwrapRootArrayParserWithBlock:(SBJson5ValueBlock)block
-                        errorHandler:(SBJson5ErrorBlock _Nullable)eh;
++ (id)unwrapRootArrayParserWithBlock:(SBJson5ValueBlock)block
+                        errorHandler:(SBJson5ErrorBlock)eh;
 
 /**
  Feed data to parser
@@ -238,5 +236,3 @@ typedef void (^SBJson5ErrorBlock)(NSError* error);
 - (SBJson5ParserStatus)parse:(NSData*)data;
 
 @end
-
-NS_ASSUME_NONNULL_END
