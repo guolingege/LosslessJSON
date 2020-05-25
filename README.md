@@ -6,5 +6,9 @@ supports both Objective-C and Swift
 ```
   pod 'LosslessJSON'
 ```
+then
+```
+#import <LosslessJSON/NSData+SBJson5.h>
+```
 
 do not import SBJson5, they conflict.
