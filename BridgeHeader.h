@@ -9,5 +9,6 @@
 #ifndef BridgeHeader_h
 #define BridgeHeader_h
 
+#import "SBJson5.h"
 
 #endif /* BridgeHeader_h */
