@@ -63,8 +63,10 @@ static inline NSNumber * _Nullable strToNumber(char *str) {
     
     if (location > 1) {
         NSString *str3 = [NSString stringWithUTF8String:target];
+        free(target);
         return [NSDecimalNumber decimalNumberWithString:str3];
     }
+    free(target);
     return nil;
 }
 
