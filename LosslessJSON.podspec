@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "LosslessJSON"
-  spec.version      = "1.5"
+  spec.version      = "1.6"
   spec.summary      = "no loss for number value in json while de-serializing, modified from SBJson5."
 
   spec.homepage     = "https://github.com/guolingege/LosslessJSON"
@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "10.0"
 
-  spec.source       = { :git => "https://github.com/guolingege/LosslessJSON.git", :tag => "1.5" }
+  spec.source       = { :git => "https://github.com/guolingege/LosslessJSON.git", :tag => "1.6" }
 
   spec.source_files  = '**/*.{h,m,swift}'
   spec.public_header_files = '**/*.{h,swift}'
